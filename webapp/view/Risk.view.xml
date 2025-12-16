@@ -4,7 +4,7 @@
     displayBlock="true">
     <Page id="riskPage" title="Risk Assessment" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <Table id="riskTable" items="{/ZEHSM_RISKSet}" growing="true" growingThreshold="10">
+            <Table id="riskTable" items="{risk>/results}" growing="true" growingThreshold="10">
                 <headerToolbar>
                     <Toolbar>
                         <Title text="Risks"/>
@@ -24,16 +24,16 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{RiskId}"/>
-                            <Text text="{Plant}"/>
-                            <Text text="{RiskDescription}"/>
-                            <Text text="{RiskCategory}"/>
-                            <Text text="{RiskSeverity}"/>
-                            <Text text="{Likelihood}"/>
-                            <Text text="{MitigationMeasures}"/>
+                            <Text text="{risk>RiskId}"/>
+                            <Text text="{risk>Plant}"/>
+                            <Text text="{risk>RiskDescription}"/>
+                            <Text text="{risk>RiskCategory}"/>
+                            <Text text="{risk>RiskSeverity}"/>
+                            <Text text="{risk>Likelihood}"/>
+                            <Text text="{risk>MitigationMeasures}"/>
                             <VBox>
-                                <Text text="{path: 'RiskIdentificationDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' }}"/>
-                                <Text text="{CreatedBy}" class="sapUiTinyMarginTop"/>
+                                <Text text="{path: 'risk>RiskIdentificationDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' }}"/>
+                                <Text text="{risk>CreatedBy}" class="sapUiTinyMarginTop"/>
                             </VBox>
                         </cells>
                     </ColumnListItem>
