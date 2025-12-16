@@ -1,0 +1,33 @@
+<mvc:View controllerName="ehsm.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true">
+    <Page id="dashboardPage" title="Dashboard" showNavButton="false">
+        <headerContent>
+            <Button icon="sap-icon://log" press="onLogout" tooltip="Logout"/>
+        </headerContent>
+        <content>
+            <FlexBox wrap="Wrap" justifyContent="SpaceAround" class="sapUiLargeMargin">
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Risk Assessment" subheader="Manage Risks" press="onPressRisk">
+                    <tileContent>
+                        <TileContent footer="View Risks">
+                            <content>
+                                <NumericContent icon="sap-icon://alert" />
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Incident Management" subheader="Track Incidents" press="onPressIncident">
+                    <tileContent>
+                        <TileContent footer="View Incidents">
+                            <content>
+                                <NumericContent icon="sap-icon://accidental-leave" />
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

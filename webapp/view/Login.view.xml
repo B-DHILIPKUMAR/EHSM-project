@@ -1,0 +1,29 @@
+<mvc:View controllerName="ehsm.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true">
+    <Page id="loginPage" title="Safety Engineer Portal">
+        <content>
+            <FlexBox alignItems="Center" justifyContent="Center" height="100%" direction="Column">
+                <Panel width="400px" backgroundDesign="Transparent" class="sapUiResponsiveMargin">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Login" level="H2"/>
+                        </Toolbar>
+                    </headerToolbar>
+                    <content>
+                        <VBox spacing="1rem">
+                            <Label text="Employee ID" labelFor="inpEmployeeId"/>
+                            <Input id="inpEmployeeId" placeholder="Enter Employee ID" value="{/EmployeeId}"/>
+                            <Label text="Password" labelFor="inpPassword"/>
+                            <Input id="inpPassword" type="Password" placeholder="Enter Password" value="{/Password}"/>
+                            <Button text="Login" type="Emphasized" width="100%" press="onLogin"/>
+                        </VBox>
+                    </content>
+                </Panel>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

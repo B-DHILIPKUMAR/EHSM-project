@@ -1,0 +1,44 @@
+<mvc:View controllerName="ehsm.controller.Risk"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page id="riskPage" title="Risk Assessment" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <Table id="riskTable" items="{/ZEHSM_RISKSet}" growing="true" growingThreshold="10">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Risks"/>
+                        <ToolbarSpacer/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column><Text text="Risk ID"/></Column>
+                    <Column><Text text="Plant"/></Column>
+                    <Column><Text text="Description"/></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Category"/></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Severity"/></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Likelihood"/></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Mitigation"/></Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Date"/><Text text=" / Created By"/></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{RiskId}"/>
+                            <Text text="{Plant}"/>
+                            <Text text="{RiskDescription}"/>
+                            <Text text="{RiskCategory}"/>
+                            <Text text="{RiskSeverity}"/>
+                            <Text text="{Likelihood}"/>
+                            <Text text="{MitigationMeasures}"/>
+                            <VBox>
+                                <Text text="{path: 'RiskIdentificationDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' }}"/>
+                                <Text text="{CreatedBy}" class="sapUiTinyMarginTop"/>
+                            </VBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -79,28 +79,67 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "ehsm.view",
         "controlAggregation": "pages",
         "controlId": "app",
-        "transition": "slide",
-        "type": "View",
-        "viewType": "XML",
-        "path": "ehsm.view",
-        "async": true,
-        "viewPath": "ehsm.view"
+        "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteView1",
-          "pattern": ":?query:",
+          "name": "Login",
+          "pattern": "",
           "target": [
-            "TargetView1"
+            "TargetLogin"
+          ]
+        },
+        {
+          "name": "Dashboard",
+          "pattern": "dashboard",
+          "target": [
+            "TargetDashboard"
+          ]
+        },
+        {
+          "name": "Risk",
+          "pattern": "risk",
+          "target": [
+            "TargetRisk"
+          ]
+        },
+        {
+          "name": "Incident",
+          "pattern": "incident",
+          "target": [
+            "TargetIncident"
           ]
         }
       ],
       "targets": {
-        "TargetView1": {
-          "id": "View1",
-          "name": "View1"
+        "TargetLogin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "Login"
+        },
+        "TargetDashboard": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "Dashboard"
+        },
+        "TargetRisk": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "Risk"
+        },
+        "TargetIncident": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "Incident"
         }
       }
     },
